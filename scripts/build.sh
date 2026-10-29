@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Builds "dist/AM File Transfer.app". Pass --install to also copy it into /Applications.
+# Builds "dist/AM File Transfer.app". App Installer (~/main/dev/repos/app-installer) copies it into
+# /Applications.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -26,9 +27,3 @@ cp "$bin_dir/AMFileTransfer" "$binary"
 xattr -cr "$app"
 codesign --force --sign - "$app"
 echo "Built $app"
-
-if [[ "${1:-}" == "--install" ]]; then
-  rm -rf "/Applications/AM File Transfer.app"
-  cp -R "$app" /Applications/
-  echo "Installed /Applications/AM File Transfer.app"
-fi

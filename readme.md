@@ -15,8 +15,7 @@ OpenMTP also uses to talk to Android phones. The app itself is SwiftUI.
 ## Build
 
 ```bash
-./scripts/build.sh               # creates "dist/AM File Transfer.app"
-./scripts/build.sh --install     # also copies it into /Applications
+./scripts/build.sh               # creates "dist/AM File Transfer.app"; App Installer installs it
 ./scripts/build-libmtp.sh        # once, before using swift directly:
 swift run AMFileTransfer         # run without making an app bundle
 swift test                       # run the tests
